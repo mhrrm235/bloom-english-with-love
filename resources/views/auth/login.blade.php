@@ -77,31 +77,7 @@
                 </div>
             </form>
 
-            <!-- Quick Login Credentials Helper Box -->
-            <div class="mt-10 pt-6 border-t border-slate-100 relative z-10">
-                <div class="bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200/80">
-                    <p class="text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-3 text-center flex items-center justify-center gap-1.5">
-                        <span>🔑</span> Akun Uji Coba Cepat (Klik/Ketik Password: <code class="text-rose-600">password123</code>)
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
-                        <button type="button" onclick="document.getElementById('email').value='admin@bloom.com'" 
-                            class="p-2.5 rounded-xl bg-white border border-slate-200 hover:border-purple-300 text-left transition-all hover:shadow-xs group">
-                            <span class="block font-extrabold text-purple-700 group-hover:underline">👑 Admin</span>
-                            <code class="text-[11px] text-slate-600 block truncate">admin@bloom.com</code>
-                        </button>
-                        <button type="button" onclick="document.getElementById('email').value='instructor@bloom.com'" 
-                            class="p-2.5 rounded-xl bg-white border border-slate-200 hover:border-indigo-300 text-left transition-all hover:shadow-xs group">
-                            <span class="block font-extrabold text-indigo-700 group-hover:underline">🎓 Instructor</span>
-                            <code class="text-[11px] text-slate-600 block truncate">instructor@bloom.com</code>
-                        </button>
-                        <button type="button" onclick="document.getElementById('email').value='student@bloom.com'" 
-                            class="p-2.5 rounded-xl bg-white border border-slate-200 hover:border-emerald-300 text-left transition-all hover:shadow-xs group">
-                            <span class="block font-extrabold text-emerald-700 group-hover:underline">⭐ Student</span>
-                            <code class="text-[11px] text-slate-600 block truncate">student@bloom.com</code>
-                        </button>
-                    </div>
-                </div>
-            </div>
+
 
             <!-- Footer Register Link Inside Card -->
             <div class="mt-8 text-center relative z-10">

@@ -140,9 +140,6 @@
                 </div>
                 @else
                 <div class="flex items-center space-x-3">
-                    <a href="{{ route('login') }}" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-rose-600 transition-colors">
-                        Masuk
-                    </a>
                     <a href="{{ route('register') }}" class="px-5 py-2.5 rounded-xl text-sm font-bold text-white gradient-brand shadow-md hover:shadow-lg hover:opacity-95 transition-all">
                         Daftar Gratis
                     </a>

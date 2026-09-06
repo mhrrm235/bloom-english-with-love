@@ -35,19 +35,24 @@ COPY . .
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
-# Create SQLite database file if not exists and set permissions
+# Create SQLite database file and set permissions
 RUN touch database/database.sqlite \
     && chown -R www-data:www-data storage bootstrap/cache database \
     && chmod -R 775 storage bootstrap/cache database
 
-# Create entrypoint script
+# Create entrypoint script with automatic .env creation & key generation
 RUN echo '#!/bin/sh\n\
+if [ ! -f .env ]; then\n\
+  cp .env.example .env\n\
+fi\n\
 php artisan key:generate --force\n\
+touch database/database.sqlite\n\
+chown -R www-data:www-data .env database/database.sqlite storage bootstrap/cache\n\
+chmod -R 775 storage bootstrap/cache database\n\
 php artisan migrate:fresh --seed --force\n\
 php artisan storage:link || true\n\
-php artisan config:cache\n\
-php artisan route:cache\n\
-php artisan view:cache\n\
+php artisan config:clear\n\
+php artisan cache:clear\n\
 apache2-foreground' > /usr/local/bin/entrypoint.sh \
     && chmod +x /usr/local/bin/entrypoint.sh
 
